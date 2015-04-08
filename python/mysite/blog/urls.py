@@ -2,7 +2,7 @@ from django.conf.urls import url
 
 from . import views
 
-urlpatterns = {
+urlpatterns = [
 	url(r'^$', views.index, name='index'),
 	url(
 		r'^view/(?P<slug>[\w-]+)/$', 
@@ -12,4 +12,4 @@ urlpatterns = {
 		r'^category/(?P<slug>[\w-]+)/$', 
 		views.view_category, 
 		name='view_blog_category'),
-	}
+	]
