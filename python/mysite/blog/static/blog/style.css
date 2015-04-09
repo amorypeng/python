@@ -1,0 +1,132 @@
+@import url("reset.css");
+
+* {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+body{
+	font-family: 'Roboto', sans-serif;
+}
+
+/**Holy grail css stolen from github **/
+.HolyGrail {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+.HolyGrail footer,
+.HolyGrail header {
+	flex: none;
+}
+
+.HolyGrail-body {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+.HolyGrail-content {
+	flex: 1;
+}
+
+.HolyGrail-nav, .HolyGrail-ads {
+	flex: 0 0 12em;
+}
+
+.HolyGrail-nav {
+	order: 0;
+}
+
+.HolyGrail-ads{
+	order: 5;
+}
+
+@media (min-width: 600px)  {
+	.HolyGrail-body {
+		flex-direction: row;
+		flex: 1;
+	}
+	.HolyGrail-content {
+		flex: 1;
+	}
+	
+	.HolyGrail-nav, .HolyGrail-ads {
+		flex:0 0 12em;
+	}
+}
+
+/** general polishing **/
+header {
+	padding-top: 150px;
+	padding-bottom: 25px;
+	padding-left: 25px;
+	border-top: 15px solid black;
+	border-bottom: 1px solid #d3d3d3;
+	font-variant: small-caps;
+}
+
+footer {
+	clear: both;
+	padding: 50px;
+	width: 100%;
+	display: block;
+	bottom: 0px;
+	
+}
+
+.HolyGrail-body  {
+	margin-top: 20px;
+}
+
+.HolyGrail-content {
+	margin-left: 20px;
+}
+
+.HolyGrail-content h2 {
+	text-align: center;
+}
+
+.HolyGrail-content .post {
+	line-height: 30px;
+	padding-top: 40px;
+	border-bottom: 1px solid #d3d3d3;
+	margin-left: 20px; margin-right: 25px;
+}
+
+.HolyGrail-nav {
+	text-align: center;
+	line-height: 20px;
+}
+
+footer {
+	line-height: 50px;
+	text-align: center;
+}
+
+h1 {
+	font-size: 40px;
+}
+
+h2 {
+	font-size: 30px;
+	line-height: 50px;
+}
+
+h3 {
+	font-size: 25px;
+}
+
+h6 {
+	font-size: 14px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+a{
+	color: darkred;
+	text-decoration: none;
+}

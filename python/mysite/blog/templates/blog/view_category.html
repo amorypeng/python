@@ -1,5 +1,5 @@
 {% extends 'blog/base.html' %}
-{% block head_title %}Viewing category {{ category.title }}{% endblock %}
+{% block head_title %}Viewing category: {{ category.title }}{% endblock %}
 {% block title %}{{ category.title }}{% endblock %}
 
 {% block content %}
@@ -8,6 +8,7 @@
 	{% for post in posts %}
 		<li><a href="{% url 'blog:view_blog_post' post.slug %}">{{ post.title }}</a></li>
 	{% endfor %}
+		
 	</ul>
 	{% else %}
 		<p>There's nothing yet</p>

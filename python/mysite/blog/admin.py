@@ -3,7 +3,7 @@ from .models import Blog, Category
 # Register your models here.
 
 class BlogAdmin(admin.ModelAdmin):
-	exlude = ['posted']
+	readonly_fields = ('posted', )
 	prepopulated_fields = {'slug': ('title',)}
 	
 class CategoryAdmin(admin.ModelAdmin):

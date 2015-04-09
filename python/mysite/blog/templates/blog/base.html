@@ -1,11 +1,30 @@
+
+<!--holy grail bby -->
+
 <html>
-	<head>
-		<title>{% block head_title %}Welcom to my blog{% endblock %}</title>
-	</head>
-	<body>
-		<h1>{% block title %}Welcome to my block {% endblock %}</h1>
-		{% block content %}
+<head>
+	<meta name="viewport" content="width=device-width" />
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}"/>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+	<title>{% block head_title %}Amory Peng's Blog{% endblock %}</title>
+</head>
+	
+			
+<body class="HolyGrail">
+	<header>
+		<h1>{% block title %}welcome to my blog {% endblock %}</h1>
+	</header>
+	<div class="HolyGrail-body">
+	{% block content %}
 		
-		{% endblock %}
-	</body>
+	{% endblock %}
+	</div>
+	
+	<footer>
+		<a href="{% url 'blog:index' %}">Go Home</a>
+		<h6>I made this!</h6>
+	</footer>
+	
+</body>
 </html>
