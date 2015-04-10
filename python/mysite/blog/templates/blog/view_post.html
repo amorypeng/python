@@ -3,8 +3,28 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
-	{{ post.category }}
+	<div class="post-body">
+	<div class="align-center">
+		Posted in <a href="{% url 'blog:view_blog_category' post.category.slug %}">{{ post.category }}</a> by {{ post.author }}
+		<br />
+		{{ post.posted }}
+		<br />
+		<br />
+	</div>
+		{{ post.body|linebreaksbr }}
 	<br />
-	{{ post.body }}
+	<br />
+		<div class="post-navigation">
+		{% if previous_post %}
+			<a href="{% url 'blog:view_blog_post' previous_post.slug %}">< {{ previous_post.title }}</a>
+		{% endif %}
+		{% if previous_post and next_post %}
+			*
+		{% endif %}
+		{% if next_post %}
+			<a href="{% url 'blog:view_blog_post' next_post.slug %}">{{ next_post.title }} ></a>
+		{% endif %}
+		</div>
+	</div>
 {% endblock %}
 

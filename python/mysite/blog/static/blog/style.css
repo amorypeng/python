@@ -19,6 +19,7 @@ body{
 .HolyGrail footer,
 .HolyGrail header {
 	flex: none;
+	text-align: center;
 }
 
 .HolyGrail-body {
@@ -28,7 +29,7 @@ body{
 }
 
 .HolyGrail-content {
-	flex: 1;
+	flex: 4;
 }
 
 .HolyGrail-nav, .HolyGrail-ads {
@@ -36,20 +37,24 @@ body{
 }
 
 .HolyGrail-nav {
-	order: 0;
+	order: 2;
 }
 
 .HolyGrail-ads{
 	order: 5;
 }
 
-@media (min-width: 600px)  {
+@media (min-width: 650px)  {
 	.HolyGrail-body {
 		flex-direction: row;
 		flex: 1;
 	}
+	.HolyGrail header {
+		text-align: left;
+	}
 	.HolyGrail-content {
 		flex: 1;
+		order: 3;
 	}
 	
 	.HolyGrail-nav, .HolyGrail-ads {
@@ -62,7 +67,7 @@ header {
 	padding-top: 150px;
 	padding-bottom: 25px;
 	padding-left: 25px;
-	border-top: 15px solid black;
+	border-top: 15px solid darkred;
 	border-bottom: 1px solid #d3d3d3;
 	font-variant: small-caps;
 }
@@ -104,6 +109,24 @@ footer {
 	line-height: 50px;
 	text-align: center;
 }
+
+/** view post css **/
+
+.post-body {
+	display: block;
+	width: 100%;
+	line-height: 30px;
+	padding:0 50px;
+}
+.align-center{
+	text-align: center;
+}
+
+.post-navigation {
+	display: block;
+	text-align: center;
+}
+
 
 h1 {
 	font-size: 40px;
