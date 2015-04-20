@@ -12,4 +12,9 @@ urlpatterns = [
 		r'^category/(?P<slug>[\w-]+)/$', 
 		views.view_category, 
 		name='view_blog_category'),
+	url(
+		r'^archives/',
+		views.view_archives,
+		name='view_archives'),
 	]
+	

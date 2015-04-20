@@ -1,17 +1,31 @@
 {% extends 'blog/base.html' %}
+{% block scripts %}
+<script>
+$(document).ready(function(){
+	$('.category-parent').click(function(){
+		$('.category-nav').toggleClass('visible');
+	});
+});
+</script>
+{% endblock %}
 
 {% block content %}
 <nav class="HolyGrail-nav">
-	<h2> Categories </h2>
+	<br />
+	<h2><a href="#"> About </a></h2>
+	<h2><a href="{% url 'blog:view_archives' %}"> Archives </a></h2>
+	<div class="category-parent"><h2>Categories</h2>
 	{% if categories %}
-		<ul>
-			{% for category in categories %}
-				<li><a href="{% url 'blog:view_blog_category' category.slug %}">{{ category.title }}</a></li>
-			{% endfor %}
+		<ul class="category-nav">
+		{% for category in categories %}
+			<li><a href="{% url 'blog:view_blog_category' category.slug %}">{{ category.title }}</a></li>
+		{% endfor %}
 		</ul>
-	{% else %}
-		<p>There's nothing yet</p>
 	{% endif %}
+	</div>
+	
+	<h2><a href=#"> Contact </a></h2>
+	
 </nav>
 
 <main class="HolyGrail-content">
@@ -22,16 +36,36 @@
 		<div class="post">
 			<h3><a href="view/{{ post.slug }}">{{ post.title|capfirst }}</a></h3>
 			<br />
-			{{ post.body|linebreaksbr|truncatewords:50 }}
+			{{ post.body|linebreaksbr|truncatewords:150 }}
 			<a href="view/{{ post.slug }}">continue</a>
 			<br /><br />
 			<h6>Written {{ post.posted }} by {{ post.author }}</h6>
+			<h6>
+				Posted in 
+				{% for category in post.category.all %}
+					<a href="{% url 'blog:view_blog_category' category.slug %}">{{ category }}</a> |
+				{% endfor %}
+			</h6>
 		</div>
 		{% endfor %}
 		
 	{% else %}
 		<p>There's nothing yet</p>
 	{% endif %}
+	
+	<!-- pagination -->
+	
 </main>
+{% endblock %}
 
+{% block pagination %}
+	<div class="align-center">
+	{% if posts.has_previous %}
+		<a href="?page={{ posts.previous_page_number }}">previous</a>
+	{% endif %}
+	page {{ posts.number }} of {{posts.paginator.num_pages }}.
+	{% if posts.has_next %}
+		<a href="?page={{ posts.next_page_number }}">next</a>
+	{% endif %}
+	</div>
 {% endblock %}

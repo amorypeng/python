@@ -30,14 +30,15 @@ body{
 
 .HolyGrail-content {
 	flex: 4;
+	order: 2;
 }
 
 .HolyGrail-nav, .HolyGrail-ads {
-	flex: 0 0 12em;
+	flex: 0 0 ;
 }
 
 .HolyGrail-nav {
-	order: 2;
+	order: 1;
 }
 
 .HolyGrail-ads{
@@ -61,15 +62,35 @@ body{
 		flex:0 0 12em;
 	}
 }
+/** javascript category menu **/
+nav .category-parent {
+	color: darkred;
+	cursor: pointer;
+}
+
+
+nav ul.category-nav {
+	display: none;
+}
+
+nav ul.visible {
+	display: block;
+}
+
+
 
 /** general polishing **/
 header {
 	padding-top: 150px;
 	padding-bottom: 25px;
-	padding-left: 25px;
+	padding-left: 25px; padding-right: 25px;
 	border-top: 15px solid darkred;
 	border-bottom: 1px solid #d3d3d3;
 	font-variant: small-caps;
+}
+
+a:hover, .category-parent:hover{
+	color: red;
 }
 
 footer {
@@ -77,8 +98,7 @@ footer {
 	padding: 50px;
 	width: 100%;
 	display: block;
-	bottom: 0px;
-	
+	position: relative;
 }
 
 .HolyGrail-body  {
@@ -116,7 +136,7 @@ footer {
 	display: block;
 	width: 100%;
 	line-height: 30px;
-	padding:0 50px;
+	padding:0 80px;
 }
 .align-center{
 	text-align: center;
@@ -127,9 +147,21 @@ footer {
 	text-align: center;
 }
 
+@media (max-width: 650px) {
+	.post-body {
+		padding: 0 20px;
+	}
+
+}
+
+/** view category css **/
+.category-body {
+	width: 100%;
+	line-height: 30px;
+}
 
 h1 {
-	font-size: 40px;
+	font-size: 50px;
 }
 
 h2 {

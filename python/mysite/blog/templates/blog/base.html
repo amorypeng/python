@@ -5,15 +5,17 @@
 <head>
 	<meta name="viewport" content="width=device-width" />
 	{% load staticfiles %}
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}"/>
 	<link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
-	<title>{% block head_title %}Amory Peng's Blog{% endblock %}</title>
+	<title>{% block head_title %}Babby's First Blog{% endblock %}</title>
+	{% block scripts %} {% endblock %}
 </head>
 	
 			
 <body class="HolyGrail">
 	<header>
-		<h1>{% block title %}welcome to my blog {% endblock %}</h1>
+		<h1>{% block title %}babby's first blog {% endblock %}</h1>
 	</header>
 	<div class="HolyGrail-body">
 	{% block content %}
@@ -22,6 +24,8 @@
 	</div>
 	
 	<footer>
+		{% block pagination %}
+		{% endblock %}
 		<a href="{% url 'blog:index' %}">Go Home</a>
 		<h6>I made this!</h6>
 	</footer>

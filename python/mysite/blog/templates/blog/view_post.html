@@ -5,7 +5,7 @@
 {% block content %}
 	<div class="post-body">
 	<div class="align-center">
-		Posted in <a href="{% url 'blog:view_blog_category' post.category.slug %}">{{ post.category }}</a> by {{ post.author }}
+		Posted by {{ post.author }}
 		<br />
 		{{ post.posted }}
 		<br />

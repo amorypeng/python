@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+{% block head_title %}Archives {% endblock %}
+{% block title %} Archives {% endblock %}
+
+{% block content %}
+	<div class="align-center post-body">
+	{% if posts %}
+	<ul>
+		{% for post in posts %}
+		<li><a href="{% url 'blog:view_blog_post' post.slug %}">{{ post.title }}</a> posted on {{ post.posted }}</li>
+	
+		{% endfor %}
+	</ul>
+	{% else %}
+		<p>There's nothing yet</p>
+	{% endif %}
+	</div>
+{% endblock %}
+
+		
