@@ -18,7 +18,7 @@ $(document).ready(function(){
 	{% if categories %}
 		<ul class="category-nav">
 		{% for category in categories %}
-			<li><a href="{% url 'blog:view_blog_category' category.slug %}">{{ category.title }}</a></li>
+			<li class="small-caps"><a href="{% url 'blog:view_blog_category' category.slug %}">{{ category.title }}</a></li>
 		{% endfor %}
 		</ul>
 	{% endif %}
@@ -29,14 +29,14 @@ $(document).ready(function(){
 </nav>
 
 <main class="HolyGrail-content">
-	<h2>Posts</h2>
+	
 	{% if posts %}
 		
 		{% for post in posts %}
 		<div class="post">
 			<h3><a href="view/{{ post.slug }}">{{ post.title|capfirst }}</a></h3>
 			<br />
-			{{ post.body|linebreaksbr|truncatewords:150 }}
+			<div class="font-roboto">{{ post.body|linebreaksbr|truncatewords:150 }}</div>
 			<a href="view/{{ post.slug }}">continue</a>
 			<br /><br />
 			<h6>Written {{ post.posted }} by {{ post.author }}</h6>
